@@ -1,73 +1,39 @@
-#ifndef BORROWING_H
+#ifndef BORROWING_H   // Prevents multiple inclusions of this header file
 #define BORROWING_H
-/*
- * Header guard:
- * Prevents this header file from being included more than once
- * during compilation, which avoids redefinition errors.
- */
 
-#define MAX_RECORDS 100
-/*
- * MAX_RECORDS:
- * Defines the maximum number of borrowing records
- * that the system can store at one time.
- */
+// Maximum number of borrowing records allowed
+#define MAX_BORROWINGS 300
 
-// Structure to store borrowing information
+// Maximum length for book ID and member ID strings
+#define BORROW_ID_SIZE 20
+
+// Maximum length for date strings (YYYY-MM-DD format, etc.)
+#define DATE_SIZE 20
+
+// Structure to store details about a borrowing record
 typedef struct {
-    int memberID;
-    /*
-     * memberID:
-     * Stores the ID of the member who borrowed the book.
-     */
+    int recordId;                         // Unique ID for each borrowing transaction
+    char bookId[BORROW_ID_SIZE];          // ID of the borrowed book
+    char memberId[BORROW_ID_SIZE];        // ID of the member who borrowed the book
+    char borrowDate[DATE_SIZE];           // Date when the book was borrowed
+    char dueDate[DATE_SIZE];              // Expected return date
+    char returnDate[DATE_SIZE];           // Actual return date ("-" if not returned)
+    int returned;                         // Status flag (0 = not returned, 1 = returned)
+} Borrowing;
 
-    int bookID;
-    /*
-     * bookID:
-     * Stores the ID of the book that was borrowed.
-     */
+// Declare the borrowing array (defined in another .c file)
+extern Borrowing borrowings[MAX_BORROWINGS];
 
-    char issueDate[11];
-    /*
-     * issueDate:
-     * Stores the date when the book was issued.
-     * Format used: DD-MM-YYYY
-     * 11 characters are required including the null terminator.
-     */
+// Keeps track of total number of borrowing records
+extern int borrowingCount;
 
-    char returnDate[11];
-    /*
-     * returnDate:
-     * Stores the date when the book was returned.
-     * Format used: DD-MM-YYYY
-     * If the book has not been returned yet, it stores "N/A".
-     */
-
-    int isReturned;
-    /*
-     * isReturned:
-     * Indicates the current borrowing status of the book.
-     * Value 0 → Book is currently borrowed
-     * Value 1 → Book has been returned
-     */
-
-} BorrowRecord;
-
-/*
- * Function Prototypes
- * These functions are implemented in borrowing.c
- */
-
-// Issues a book to a member and records the borrowing details
+// Function to issue (borrow) a book
 void issueBook(void);
 
-// Returns a previously borrowed book
+// Function to return a borrowed book
 void returnBook(void);
 
-// Displays the complete borrowing history
-void displayBorrowingHistory(void);
+// Function to display all borrowing records
+void viewBorrowings(void);
 
 #endif
-/*
- * End of BORROWING_H
- */
