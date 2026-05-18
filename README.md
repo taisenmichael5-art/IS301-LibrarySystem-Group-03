@@ -90,7 +90,8 @@ library_system.exe
 
 ## Main Menu Display
 
-![alt text](image.png)
+<img width="397" height="482" alt="Screenshot 2026-05-19 015532" src="https://github.com/user-attachments/assets/71f80ec1-6c1f-4476-b5d1-b033e4b78ffe" />
+
 
 ---
 
@@ -100,7 +101,8 @@ library_system.exe
 2. The system creates inventory_report.txt.
 3. Open the file to view the report.
 
-![alt text](<Screenshot 2026-05-19 020038.png>)
+<img width="837" height="343" alt="Screenshot 2026-05-19 020038" src="https://github.com/user-attachments/assets/315e41aa-c806-43fb-a4a7-01b3e81645bf" />
+
 
 ---
 
