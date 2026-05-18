@@ -1,6 +1,6 @@
-# 📚 IS301 Capstone Project – Library Management System (C Program)
+# 📚 Library Management System – User Manual
 
-# 👨‍💻 Group Members
+# 👨‍💻 Program Developers
 
 | Name | Student ID | Responsibility |
 |---|---|---|
@@ -39,6 +39,79 @@ The program allows users to:
 5. Requested operation is performed
 6. Data is updated and saved
 7. Program continues until Exit is selected
+
+---
+
+# 🖥️ System Requirements
+
+Before running the program, ensure the following are installed:
+
+- Windows/Linux operating system
+- GCC Compiler (MinGW for Windows)
+- Terminal or Command Prompt
+- Git (optional for repository management)
+
+---
+
+## How to Compile the Program
+
+### Using GCC
+
+```bash
+gcc main.c books.c members.c borrowing.c auth.c filehandling.c menu.c -o library_system
+```
+
+---
+
+## How to Run the Program
+
+### Windows
+
+```bash
+library_system.exe
+```
+
+### Linux/Mac
+
+```bash
+./library_system
+```
+
+---
+
+## Login Instructions
+
+1. Run the program.
+2. Enter administrator username.
+3. Enter password.
+4. Access the main menu.
+
+---
+
+## Main Menu Display
+
+![alt text](image.png)
+
+---
+
+## Generating Inventory Report
+
+1. Select “Generate Inventory Report”.
+2. The system creates inventory_report.txt.
+3. Open the file to view the report.
+
+![alt text](<Screenshot 2026-05-19 020038.png>)
+
+---
+
+## Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| Program does not compile | Check GCC installation |
+| File not found | Ensure txt files exist |
+| Invalid input | Enter correct values |
+| Login failed | Verify username/password |
 
 ---
 
@@ -85,19 +158,3 @@ Possible future upgrades include:
 
 ---
 
-# 🖥️ System Requirements
-
-Before running the program, ensure the following are installed:
-
-- GCC Compiler (MinGW for Windows)
-- Terminal or Command Prompt
-- Git (optional for repository management)
-
----
-
-# ⚙️ Compiling the Program
-
-## For Linux / macOS
-
-```bash
-gcc main.c books.c members.c borrowing.c filehandling.c auth.c -o library_system
