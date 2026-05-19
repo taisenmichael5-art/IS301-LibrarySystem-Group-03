@@ -1,1 +1,16 @@
 Updated: 2026-05-17 03:35:10
+
+Library Inventory Report
+========================
+
+Book ID    Title                        Author                 Genre            Year   Qty     
+------------------------------------------------------------------------------------------
+001        Intro to C                   John Smith             Programming      2020   5       
+002        Data Structures              Alice Brown            Computer Science 2021   3       
+003        System Analysis              Peter Young            Information Systems 2019   13      
+
+Total book titles: 3
+Total available copies: 21
+Registered members: 2
+Borrowing records: 1
+
