@@ -1,438 +1,162 @@
-# 📚 IS301 Capstone Project – Library Management System (C Program)
+# 📚 Library Management System – User Manual
 
-## 📌 Submission Method
-This project must be submitted through a **GitHub repository link**.  
-**ZIP file submission is not allowed.**
+# 👨‍💻 Program Developers
 
----
-
-## 🧑‍🤝‍🧑 Group Repository Setup
-
-Each group must create **one GitHub repository only** for the project.
-
-### Repository naming format
-Use this format:
-
-```text
-IS301-LibrarySystem-Group-<GroupNumber>
-```
-
-Example:
-
-```text
-IS301-LibrarySystem-Group-05
-```
-
-### Repository visibility
-Create the repository as:
-- **Private**, then invite the lecturer and all group members
-- or **Public**, only if your lecturer instructs you to do so
-
-### Add collaborators
-Each group must add:
-- all group members
-- the lecturer
-
-Go to:
-
-```text
-Settings → Collaborators → Add people
-```
+| Name | Student ID | Responsibility |
+|---|---|---|
+| Nathaniel Posanai | 240160 | Book Management |
+| Abel Wamanimbo | 240569 | Member Management |
+| Taisen Marainump | 250692 | Borrowing System |
+| Raymond Pae | 240158 | File Handling |
+| Raymond Bonaven | 240567 | Main Menu & Integration |
 
 ---
 
-## 🌿 Required Branch Structure
+## 📖 Project Overview
 
-Your repository must contain the following branches:
+The Library Management System is a menu-driven C program developed for the IS301 Capstone Project. The system helps librarians manage books, members, and borrowing records using text files for data storage.
 
-### 1. `main`
-This is the **final submission branch**.  
-Do **not** code directly in `main`.
+The program allows users to:
 
-### 2. `develop`
-This is the **working integration branch**.  
-All completed features must be merged into `develop` first.
-
-### 3. Individual member branches
-Each member must create and use their **own branch**.
-
-Use this naming format:
-
-```text
-feature/<firstname>-<task>
-```
-
-Examples:
-
-```text
-feature/john-book-search
-feature/mary-member-management
-feature/peter-borrow-return
-feature/anna-file-handling
-```
-
-Each member must work only on their own branch.
+- Login securely
+- View available books
+- Search books by title or author
+- Add new books
+- Register library members
+- Borrow books
+- Return books
+- Generate inventory reports
+- Save and load data using files
 
 ---
 
-## 💻 Project Language Requirement
+# 🔄 Program Flow
 
-This project is written in **C only**.
-
-Your repository must contain C source files such as:
-
-```text
-main.c
-book.c
-member.c
-borrow.c
-filehandling.c
-```
-
-It may also include header files such as:
-
-```text
-book.h
-member.h
-borrow.h
-filehandling.h
-```
-
-Do not submit the project in another programming language.
+1. User logs into the system
+2. Program loads book data from file
+3. Main menu is displayed
+4. User selects an option
+5. Requested operation is performed
+6. Data is updated and saved
+7. Program continues until Exit is selected
 
 ---
 
-## 📁 Suggested C Project Structure
+# 🖥️ System Requirements
 
-```text
-IS301-LibrarySystem-Group-05/
-│
-├── README.md
-├── books.txt
-├── inventory_report.txt
-├── main.c
-├── menu.c
-├── menu.h
-├── books.c
-├── books.h
-├── members.c
-├── members.h
-├── borrowing.c
-├── borrowing.h
-├── filehandling.c
-├── filehandling.h
-├── auth.c
-├── auth.h
-└── docs/
-    ├── user_manual.md
-    ├── pseudocode.md
-    └── flowchart.png
-```
+Before running the program, ensure the following are installed:
 
-You may organise your files slightly differently, but your code must remain clean, modular, and easy to follow.
+- Windows/Linux operating system
+- GCC Compiler (MinGW for Windows)
+- Terminal or Command Prompt
+- Git (optional for repository management)
 
 ---
 
-## 🔄 Required GitHub Workflow
+## How to Compile the Program
 
-Follow these steps correctly.
-
-### Step 1: One member creates the repository
-One group member creates the repository on GitHub using the correct naming format.
-
-### Step 2: Create the main branches
-After creating the repository, create:
+### Using GCC
 
 ```bash
-git branch develop
-git push origin develop
+gcc main.c books.c members.c borrowing.c auth.c filehandling.c menu.c -o library_system
 ```
 
-### Step 3: Each member clones the repository
-Each student must clone the repository to their computer:
+---
+
+## How to Run the Program
+
+### Windows
 
 ```bash
-git clone https://github.com/your-group/IS301-LibrarySystem-Group-05.git
-cd IS301-LibrarySystem-Group-05
+library_system.exe
 ```
 
-### Step 4: Switch to develop branch
-Before creating your own branch:
-
-```bash
-git checkout develop
-git pull origin develop
-```
-
-### Step 5: Create your feature branch
-Each member creates their own branch from `develop`:
-
-```bash
-git checkout -b feature/yourname-task
-```
-
-Example:
-
-```bash
-git checkout -b feature/john-book-search
-```
-
-### Step 6: Write and test your C code
-Work on your assigned section only.  
-Compile and test before committing.
-
-Example compile command:
-
-```bash
-gcc main.c books.c members.c borrowing.c filehandling.c auth.c -o library_system
-```
-
-Example run command:
+### Linux/Mac
 
 ```bash
 ./library_system
 ```
 
-For Windows (MinGW):
+---
 
-```bash
-gcc main.c books.c members.c borrowing.c filehandling.c auth.c -o library_system.exe
-library_system.exe
-```
+## Login Instructions
 
-### Step 7: Commit your work
-Commit regularly with meaningful messages.
-
-```bash
-git add .
-git commit -m "Added book search function in C"
-```
-
-### Step 8: Push your branch
-Push your own branch to GitHub:
-
-```bash
-git push origin feature/yourname-task
-```
-
-### Step 9: Create a Pull Request
-Go to GitHub and create a Pull Request from your feature branch into:
-
-```text
-develop
-```
-
-### Step 10: Merge only after review
-After your teammates review the code and confirm it works, merge it into `develop`.
-
-### Step 11: Final merge to main
-When the whole system is complete, tested, and ready, merge:
-
-```text
-develop → main
-```
-
-The `main` branch must contain the final working version for marking.
+1. Run the program.
+2. Enter administrator username.
+3. Enter password.
+4. Access the main menu.
 
 ---
 
-## ✅ Branch Rules
+## Main Menu Display
 
-### Allowed
-- work on your own branch
-- merge completed work into `develop`
-- merge final tested version into `main`
+<img width="397" height="482" alt="Screenshot 2026-05-19 015532" src="https://github.com/user-attachments/assets/71f80ec1-6c1f-4476-b5d1-b033e4b78ffe" />
 
-### Not allowed
-- do not code directly in `main`
-- do not push unfinished work into `main`
-- do not work directly on another member’s branch
-- do not delete other members’ files
-- do not submit a ZIP file instead of GitHub
 
 ---
 
-## 🧾 Commit Message Examples
+## Generating Inventory Report
 
-Use clear commit messages such as:
+1. Select “Generate Inventory Report”.
+2. The system creates inventory_report.txt.
+3. Open the file to view the report.
 
-```text
-Added book display function
-Implemented member registration
-Fixed file reading bug in books.txt
-Updated borrowing record logic
-Refactored menu functions
-Added authentication validation
-```
+<img width="837" height="343" alt="Screenshot 2026-05-19 020038" src="https://github.com/user-attachments/assets/315e41aa-c806-43fb-a4a7-01b3e81645bf" />
 
-Avoid unclear messages such as:
-
-```text
-update
-work
-done
-final
-changes
-```
 
 ---
 
-## 👥 Example Task Distribution
+## Troubleshooting
 
-Each member should take responsibility for a clear module.
-
-### Member 1
-- Main menu
-- Program flow
-- Integration
-
-### Member 2
-- Book management
-- Search book
-- Add new book
-- Update quantity
-
-### Member 3
-- Member management
-- Register members
-- View member details
-- Update member information
-
-### Member 4
-- Borrowing records
-- Issue books
-- Return books
-- Borrowing history
-
-### Member 5
-- File handling
-- Read from `books.txt`
-- Write to `inventory_report.txt`
-- Error handling
-
-This is only a guide. Your group may divide tasks differently, but individual contributions must be visible in GitHub.
+| Problem | Solution |
+|---------|----------|
+| Program does not compile | Check GCC installation |
+| File not found | Ensure txt files exist |
+| Invalid input | Enter correct values |
+| Login failed | Verify username/password |
 
 ---
 
-## 📚 Required Files in the Repository
+# 📁 Project Files
 
-Your repository should include the following:
+Main project files include:
 
-### Source code files
-- `.c` files
-- `.h` files
-
-### Data files
-- `books.txt`
-- `inventory_report.txt` (generated by the program)
-
-### Documentation
-- `README.md`
-- user manual
-- pseudocode and/or flowcharts
-
----
-
-## 🧪 C Program Testing Expectations
-
-Before submitting, your program should:
-- compile without major errors
-- run correctly from the terminal
-- show a menu-driven interface
-- read book data from `books.txt`
-- allow search by title or author
-- add a new book
-- update quantity
-- generate `inventory_report.txt`
-- handle invalid input properly
-- handle file errors properly
+| File Name | Description |
+|---|---|
+| `main.c` | Main program execution |
+| `menu.c` | Menu display and navigation |
+| `books.c` | Book management functions |
+| `members.c` | Member management functions |
+| `borrowing.c` | Borrow and return functions |
+| `filehandling.c` | File reading and writing |
+| `auth.c` | User authentication |
+| `books.txt` | Book database |
+| `inventory_report.txt` | Generated inventory report |
 
 ---
 
-## 🔐 Recommended Protection for Branches
+# 🛠 System Limitations
 
-If possible, protect the `main` branch on GitHub.
+Current limitations include:
 
-Recommended:
-- require pull requests before merging
-- do not allow direct pushes to `main`
-
-This helps protect the final submission.
-
----
-
-## 📤 Final Submission
-
-The final submission must include:
-
-### 1. GitHub repository link
-Submit the repository link as instructed by the lecturer.
-
-### 2. Final code in `main`
-The final working version must be in the `main` branch.
-
-### 3. Evidence of contribution
-Each member must have visible commits and branch activity on GitHub.
-
-### 4. Complete project files
-The repository must contain:
-- C source code
-- header files
-- books.txt
-- generated inventory report
-- documentation
+- Text-file storage only
+- Single administrator login
+- No graphical user interface
+- Limited validation for special characters
+- Maximum storage depends on array size
 
 ---
 
-## ❌ What will not be accepted
+# 🚀 Future Improvements
 
-The following may lead to penalties:
-- submitting a ZIP file instead of GitHub
-- no individual member branches
-- no visible commits from some members
-- direct coding in `main`
-- incomplete or non-working C program
-- poor file organisation
-- missing documentation
+Possible future upgrades include:
 
----
-
-## 📝 Minimum Git Commands Summary
-
-Useful commands for all students:
-
-```bash
-git clone <repo-url>
-cd <repo-folder>
-git checkout develop
-git pull origin develop
-git checkout -b feature/yourname-task
-git add .
-git commit -m "Your clear commit message"
-git push origin feature/yourname-task
-```
-
-To get latest changes from develop:
-
-```bash
-git checkout develop
-git pull origin develop
-git checkout feature/yourname-task
-git merge develop
-```
+- Database integration using MySQL
+- Graphical User Interface (GUI)
+- Multiple user roles
+- Online borrowing system
+- Automatic overdue notifications
+- Improved search filtering
 
 ---
 
-## 🚀 Final Reminder
-
-This is a **group C programming project**.  
-Marks are not only for the final program, but also for:
-- correct GitHub setup
-- correct use of branches
-- teamwork
-- code quality
-- documentation
-- testing
-- final presentation
-
-Start early, commit regularly, and keep your repository organised.

@@ -1,3 +1,4 @@
+
 #include <stdio.h>              // Standard I/O library for printf, etc.
 #include "auth.h"               // Handles login/authentication functions
 #include "books.h"              // Functions for managing books
@@ -78,3 +79,4 @@ int main(void) {
 
     return 0; // End of program
 }
+

@@ -1,3 +1,4 @@
+
 #include <stdio.h>      // Standard I/O library for printf
 #include "menu.h"       // Header file containing menu function declarations
 
@@ -24,3 +25,6 @@ void displayMenu(void) {
     printf("11. Generate inventory report\n");
     printf("12. Exit\n");   // Exit option
 }
+=======
+
+
