@@ -4,7 +4,7 @@
 
 /*
  * menu.h
- * Declaration for the menu display function used in main.c.
+ * Declaration for the menu display function that is used in main.c.
  */
 
 /*
