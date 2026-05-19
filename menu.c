@@ -3,8 +3,7 @@
 #include "menu.h"       // Header file containing menu function declarations
 
 /*
- * displayMenu
- * Prints the available menu options for the library system.
+ * displayMenu and prints the available menu options for the library system.
  */
 void displayMenu(void) {
     printf("\n========================================\n");   // Print menu header line
