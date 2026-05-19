@@ -25,6 +25,5 @@ void displayMenu(void) {
     printf("11. Generate inventory report\n");
     printf("12. Exit\n");   // Exit option
 }
-=======
 
 
