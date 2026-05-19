@@ -23,7 +23,7 @@ void displayMenu(void) {
     printf("9.  Return book\n");
     printf("10. View borrowing records\n");
     printf("11. Generate inventory report\n");
-    printf("12. Exit\n");   // Exit option
+    printf("12. Exit\n");
 }
 
 
